@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/8993fc20df.js" crossorigin="anonymous"></script>
+        <link rel="icon" type="image/x-icon" href="../images/logo1.jpeg">
+        <title>Natural Nanas</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/swiper-bundle.min.css">
+        <link rel="stylesheet" href="payment.css">
+    
+    </head>
+<body style="background-color: #C4DFDF;">
+    <section id="header">
+        <a href="index.html"><img src="../images/logo1.jpeg" width="120" height="120" class="logo"></a>
+        <div>
+            <ul id="navbar">
+
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="login.html">My Account</a></li>
+                <li><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                <li>
+                    <div class="search-container">
+                        <form action="/action_page.php">
+                            <input type="text" placeholder="Search.." name="search">
+                            <button type="submit"><i class="fa fa-search"></i></button>
+                        </form>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section id="checkout-form" class="section1">
+        <h2>Checkout</h2>
+        <div id="address">
+            <h3>Shipping Address</h3>
+            <form>
+                <label for="name">Full Name:</label>
+                <input type="text" id="fullName" name="name" required>
+
+                <label for="address">Address:</label>
+                <input type="text" id="addressField" name="address" required>
+
+                <label for="city">City:</label>
+                <input type="text" id="cityField" name="city" required>
+
+                <label for="zip">Zip Code:</label>
+                <input type="text" id="zipCode" name="zip" required>
+            </form>
+        </div>
+        <button class="normal" id="proceedToPayment" disabled onclick="window.location.href='payment.html'">Proceed to Payment</button>
+    </section>
+
+    <br><br><br><br>
+
+    <footer class="section1" style="font-size: 20px; bottom: 1000px;">
+        <div id="footext">
+            <ul>
+                <b>My account</b>
+                <li><a href="signin.html">Sign In</a></li>
+                <li><a href="cart.html">View Cart</a></li>
+                <li><a href="#">Wishlist</a></li>
+                <li><a href="#">Track Order</a></li>
+            </ul>
+        </div>
+        <div id="footext1">
+            <ul>
+                <b>Information</b><br>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+        <div id="footimg">
+            <img src="../images/gardennn.png" width="900" height="250">
+        </div>
+    </footer>
+
+    <center>
+        <hr class="hrr" size="5" color="gray">
+    </center>
+
+    <center>
+        <p style="font-family: 'Montserrat', sans-serif; color: black;">NaturalNanas Copyright© FrontEnd Project</p>
+    </center>
+
+    <script>
+        // Get references to the input fields
+        const nameInput = document.getElementById('fullName');
+        const addressInput = document.getElementById('addressField');
+        const cityInput = document.getElementById('cityField');
+        const zipInput = document.getElementById('zipCode');
+        const proceedToPaymentButton = document.getElementById('proceedToPayment');
+
+        // Function to check if all required fields are filled
+        function checkFields() {
+            const nameValue = nameInput.value.trim();
+            const addressValue = addressInput.value.trim();
+            const cityValue = cityInput.value.trim();
+            const zipValue = zipInput.value.trim();
+
+            const isFilled = nameValue !== '' && addressValue !== '' && cityValue !== '' && zipValue !== '';
+            proceedToPaymentButton.disabled = !isFilled;
+        }
+
+        // Add event listeners to input fields to check for changes
+        nameInput.addEventListener('input', checkFields);
+        addressInput.addEventListener('input', checkFields);
+        cityInput.addEventListener('input', checkFields);
+        zipInput.addEventListener('input', checkFields);
+    </script>
+
+</body>
+</html>

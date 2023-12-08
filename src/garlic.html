@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/8993fc20df.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/x-icon" href="../images/logo1.jpeg">
+    <title>Natural Nanas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section id="header">
+        <a href="index.html"><img src="../images/logo1.jpeg" width="120" height="120" class="logo"></a>
+        <div>
+            <ul id="navbar">
+                <li class="search-bar">
+                    <input type="text" placeholder="Search">
+                </li>
+                <li><a href="index.html">Home</a></li>
+                <li><a class="active" href="shop.html">Shop</a></li>
+                <li><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                <li><a href="login.html">Hello User</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="prodetails" class="section-p1">
+        <div class="single-pro-image">
+            <img src="../images/garlic.png" width="400px" height="400px" id="MainImg" alt="">
+        </div>
+        <div class="single-pro-details">
+            <h6>Home/ Garlic</h6>
+            <h4>Garlic</h4>
+            <h2>₹35</h2>
+            <select>
+                <option>Select Quantity</option>
+                <option>0.5kg</option>
+                <option>1kg</option>
+                <option>1.5kg</option>
+                <option>2kg</option>
+                <option>3kg</option>
+                <option>4kg</option>
+            </select>
+            <br>
+            <button class="normal" id="addToCartButton">Add to Cart</button>
+            <button class="normal" id="buyNowButton">Buy Now</button>
+        </div>
+    </section>
+    
+    <footer class="section1">
+        <div id="footext">
+            <ul>
+                <b>My account</b>
+                <li><a href="signin.html">Sign In</a></li>
+                <li><a href="cart.html">View Cart</a></li>
+                <li><a href="#">Wishlist</a></li>
+                <li><a href="#">Track Order</a></li>
+            </ul>
+        </div>
+        <div id="footext1">
+            <ul>
+                <b>Information</b><br>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+        <div id="footimg">
+            <img src="../images/gardennn.png" width="900" height="250">
+        </div>
+    </footer>
+
+    <center>
+        <hr class="hrr" size="5" color="gray">
+    </center>
+
+    <center>
+        <p style="font-family: 'Montserrat', sans-serif;">NaturalNanas Copyright© FrontEnd Project</p>
+    </center>
+
+    <script>
+        document.getElementById('addToCartButton').onclick = function () {
+            const selectedQuantity = document.querySelector('select').value;
+            alert(`Added ${selectedQuantity} of Okra to the cart`);
+        };
+    
+        document.getElementById('buyNowButton').onclick = function () {
+            const selectedQuantity = document.querySelector('select').value;
+            alert(`Buying ${selectedQuantity} of Okra`);
+            window.location.href = 'checkout.html';
+        };
+    </script>
+    
+</body>
+</html>
